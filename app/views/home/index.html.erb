@@ -1,6 +1,7 @@
 <h1>Home</h1>
 
-<%= link_to 'Crear Nota', new_note_path %>
+<%= link_to 'Crear Nota', new_note_path %> | 
+<%= link_to 'Listado de Notas', notes_path %>
 
 <% @notes.each do |note| %>
 	<div id=<%= "#{note.id}" %>>
