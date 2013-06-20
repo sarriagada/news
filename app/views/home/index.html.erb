@@ -6,7 +6,7 @@
 <% @notes.each do |note| %>
 	<div id=<%= "#{note.id}" %>>
 		<p><i><%= note.created_at %></i> <%= " - #{note.autor}" if note.autor %></p>
-		<h3><%= note.title %></h3>
+		<h3><%= link_to note.title, note %></h3>
 		<p><%= note.body %></p>
 		<%= link_to 'Leer mas...', note %>
 	</div>
