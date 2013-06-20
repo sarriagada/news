@@ -1,5 +1,8 @@
 News::Application.routes.draw do
 
+  resources :attachments
+
+
   resources :categories
 
 
