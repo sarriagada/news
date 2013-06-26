@@ -1,10 +1,10 @@
-<h1>Home</h1>
-
-<% @notes.each do |note| %>
-	<div id=<%= "#{note.id}" %>>
-		<p><i><%= note.created_at %></i> <%= " - #{note.autor}" if note.autor %></p>
-		<h3><%= link_to note.title, note %></h3>
-		<p><%= note.body %></p>
-		<%= link_to 'Leer mas...', note %>
-	</div>
-<% end %>
+<ul class="span4 lista">
+	<% @notes.each do |note| %>
+		<li id=<%= "#{note.id}"%> class="note" ><%= link_to 'Editar esta nota', edit_note_path(note) if user_signed_in? %>
+			<p><i><%= note.created_at %></i> <%= " - #{note.autor}" if note.autor %></p>
+			<h3><%= link_to note.title, note %></h3>
+			<p><%= note.body %></p>
+			<%= link_to 'Leer mas...', note %>
+		</li>
+	<% end %>
+</ul>
