@@ -8,15 +8,20 @@ html
 
   body
     .container-fluid
-      .navbar.navbar-inverse
-        .navbar-inner
-          .container-fluid
-            = link_to 'Titulo', root_path, class: 'brand'
-            ul.nav
-              li
-                = link_to 'Crear Nota', new_note_path
-              li
-                = link_to 'Listado de Notas', notes_path
+      - if user_signed_in?
+        .navbar.navbar-inverse
+          .navbar-inner
+            .container-fluid
+              = link_to 'Titulo', root_path, class: 'brand'
+              ul.nav
+                li
+                  = link_to 'Crear Nota', new_note_path
+                li
+                  = link_to 'Listado de Notas', notes_path
+                li
+                  = link_to current_user.email, root_path
+                li
+                  = link_to 'Salir', destroy_user_session_path, method: :delete 
       header.row-fluid
       .row-fluid
         = yield
