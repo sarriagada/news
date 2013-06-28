@@ -3,7 +3,7 @@
 		<li id=<%= "#{note.id}"%> class="note" ><%= link_to 'Editar esta nota', edit_note_path(note) if user_signed_in? %>
 			<p><i><%= note.created_at %></i> <%= " - #{note.autor}" if note.autor %></p>
 			<h3><%= link_to note.title, note %></h3>
-			<p><%= note.body %></p>
+			<p><%= note.summary %></p>
 			<%= link_to 'Leer mas...', note %>
 		</li>
 	<% end %>

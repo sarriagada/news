@@ -3,8 +3,7 @@
 <table>
   <tr>
     <th>Title</th>
-    <th>Subtitle</th>
-    <th>Body</th>
+    <th>Summary</th>
     <th></th>
     <th></th>
     <th></th>
@@ -13,8 +12,7 @@
 <% @notes.each do |note| %>
   <tr>
     <td><%= note.title %></td>
-    <td><%= note.subtitle %></td>
-    <td><%= note.body %></td>
+    <td><%= note.summary %></td>
     <td><%= link_to 'Show', note %></td>
     <td><%= link_to 'Edit', edit_note_path(note) %></td>
     <td><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></td>

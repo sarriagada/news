@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130626015734) do
+ActiveRecord::Schema.define(:version => 20130628013654) do
 
   create_table "attachments", :force => true do |t|
     t.string   "photo"
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(:version => 20130626015734) do
 
   create_table "notes", :force => true do |t|
     t.string   "title"
-    t.text     "subtitle"
+    t.text     "summary"
     t.text     "body"
     t.string   "autor"
     t.string   "source"

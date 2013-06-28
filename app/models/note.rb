@@ -1,5 +1,5 @@
 class Note < ActiveRecord::Base
-  attr_accessible :body, :subtitle, :title
+  attr_accessible :body, :summary, :title
 
   has_many :attachments
   has_many :tags

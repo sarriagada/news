@@ -5,7 +5,7 @@
 </h1>
 
 <p>
-  <%= @note.subtitle %>
+  <%= @note.summary %>
 </p>
 
 <p>
@@ -13,8 +13,7 @@
 </p>
 
 
-<%= link_to 'Edit', edit_note_path(@note) %> |
-<%= link_to 'Back', root_path %>
+<%= link_to 'Edit', edit_note_path(@note)  if user_signed_in? %>
 
 <div id="disqus_thread"></div>
     <script type="text/javascript">
