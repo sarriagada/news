@@ -1,6 +1,7 @@
-<ul class="span4 lista">
+<ul id="notes" data-update-url="<%= sort_notes_url %>" class="span4 lista">
 	<% @notes.each do |note| %>
-		<li id=<%= "#{note.id}"%> class="note" >
+		<%= content_tag_for :li, note do %>
+			<span class="handle">[drag]</span>
 			<%= link_to 'Editar esta nota', edit_note_path(note) if user_signed_in? %>
 			<p>
 				<i><%= note.created_at %></i> <%= " - #{note.autor}" if note.autor %>
@@ -8,6 +9,6 @@
 			<h3><%= link_to note.title, note %></h3>
 			<p><%= note.summary.html_safe %></p>
 			<%= link_to 'Leer mas...', note %>
-		</li>
+		<% end %>
 	<% end %>
 </ul>

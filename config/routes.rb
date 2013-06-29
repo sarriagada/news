@@ -18,8 +18,9 @@ News::Application.routes.draw do
   resources :tags
 
 
-  resources :notes
-
+  resources :notes do
+    collection { post :sort }
+  end
 
   root :to => 'home#index'
 end

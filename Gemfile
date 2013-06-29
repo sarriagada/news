@@ -8,6 +8,8 @@ gem 'simple_form',       '>= 2.1.0'
 gem 'strong_parameters', '~> 0.2.1'
 gem 'mini_magick'
 gem 'redactor-rails'
+gem 'jquery-ui-rails'
+gem 'acts_as_list'
 
 group :assets do
   gem 'sass-rails',      '~> 3.2.3'
