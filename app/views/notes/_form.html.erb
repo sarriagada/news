@@ -1,4 +1,4 @@
-<%= form_for(@note) do |f| %>
+<%= simple_form_for @note do |f| %>
   <% if @note.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@note.errors.count, "error") %> prohibited this note from being saved:</h2>
@@ -12,20 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
+    <%= f.input :title, input_html: { class: 'input-block-level' } %>
   </div>
   <div class="field">
-    <%= f.label :summary %><br />
-    <%= f.text_area :summary, :class => "redactor" %>
+    <%= f.input :summary, input_html: { class: 'redactor' } %>
   </div>
   <div class="field">
-    <%= f.label :body %><br />
-    <%= f.text_area :body, :class => "redactor" %>
+    <%= f.input :body, input_html: { class: 'redactor' } %>
   </div>
   <div class="field">
-    <%= f.label "Sector" %><br />
-    <%= f.text_area :section %>
+    <%= f.input :section, collection: [["col izquierda", "1"], ["col central", "2"], ["col derecha", "3"]], as: :select, include_blank: false, wrapper_html: { class: 'inline' } %>
   </div>
   <div class="actions">
     <%= f.submit %>
