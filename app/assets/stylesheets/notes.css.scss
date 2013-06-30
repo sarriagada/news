@@ -1,15 +1,31 @@
 // Place all the styles related to the notes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.note {
+.note, .ui-state-highlight {
 	background: #eee;
 	border-radius: 5px;
 	padding: 15px;
 	list-style: none;
-	margin-bottom: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0px 0px 6px;
 }
-#notes .handle {
+.handle {
   font-size: 12px;
-  color: #777;
+  color: #eee;
   cursor: move;
+  background: #A3A3A3;
+  display: inline-block;
+  width: 90%;
+  text-align: center;
+  margin-bottom: 10px;
+  box-shadow: 0px 0px 2px #000;
+  padding: 2px;
+}
+.ui-state-highlight {
+  line-height: 2.2em;
+  border: 3px dashed;
+}
+
+.lista-der{
+  img, video { display:none; }
 }

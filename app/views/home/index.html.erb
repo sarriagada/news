@@ -1,8 +1,44 @@
-<ul id="notes" data-update-url="<%= sort_notes_url %>" class="span4 lista">
-	<% @notes.each do |note| %>
+<ul id="section-1" data-section="1" data-update-url="<%= sort_notes_url %>" class="span4 lista-izq connectedSortable">
+	<% @notes_section_1.each do |note| %>
 		<%= content_tag_for :li, note do %>
-			<span class="handle">[drag]</span>
-			<%= link_to 'Editar esta nota', edit_note_path(note) if user_signed_in? %>
+		 	<% if user_signed_in? %>
+				<span class="handle">[ drag ]</span>
+				<%= link_to 'Editar', edit_note_path(note) %>
+			<% end %>
+			<p>
+				<i><%= note.created_at %></i> <%= " - #{note.autor}" if note.autor %>
+			</p>
+			<h3><%= link_to note.title, note %></h3>
+			<p><%= note.summary.html_safe %></p>
+			<%= link_to 'Leer mas...', note %>
+		<% end %>
+	<% end %>
+</ul>
+
+<ul id="section-2" data-section="2" data-update-url="<%= sort_notes_url %>" class="span4 lista-centro connectedSortable">
+	<% @notes_section_2.each do |note| %>
+		<%= content_tag_for :li, note do %>
+		 	<% if user_signed_in? %>
+				<span class="handle">[ drag ]</span>
+				<%= link_to 'Editar', edit_note_path(note) %>
+			<% end %>
+			<p>
+				<i><%= note.created_at %></i> <%= " - #{note.autor}" if note.autor %>
+			</p>
+			<h3><%= link_to note.title, note %></h3>
+			<p><%= note.summary.html_safe %></p>
+			<%= link_to 'Leer mas...', note %>
+		<% end %>
+	<% end %>
+</ul>
+
+<ul id="section-3" data-section="3" data-update-url="<%= sort_notes_url %>" class="span4 lista-der connectedSortable">
+	<% @notes_section_3.each do |note| %>
+		<%= content_tag_for :li, note do %>
+		 	<% if user_signed_in? %>
+				<span class="handle">[ drag ]</span>
+				<%= link_to 'Editar', edit_note_path(note) %>
+			<% end %>
 			<p>
 				<i><%= note.created_at %></i> <%= " - #{note.autor}" if note.autor %>
 			</p>

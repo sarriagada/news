@@ -83,7 +83,7 @@ class NotesController < ApplicationController
 
   def sort
     params[:note].each_with_index do |id, index|
-      Note.update_all({ position: index+1 },{ id: id })
+      Note.update_all({ position: index+1, section: params[:section] },{ id: id})
     end
     render nothing: true
   end
