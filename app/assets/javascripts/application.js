@@ -14,7 +14,8 @@
 //= require jquery_ujs
 //= require jquery.ui.sortable
 //= require bootstrap
-//= require redactor-rails
+//= require redactor-rails/redactor.min
+//= require redactor-rails/config.js
 //= require dataTables/jquery.dataTables
 //= require dataTables/jquery.dataTables.bootstrap
 //= require notes
