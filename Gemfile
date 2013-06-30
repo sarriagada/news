@@ -10,6 +10,7 @@ gem 'mini_magick'
 gem 'redactor-rails'
 gem 'jquery-ui-rails'
 gem 'acts_as_list'
+gem 'jquery-datatables-rails'
 
 group :assets do
   gem 'sass-rails',      '~> 3.2.3'
