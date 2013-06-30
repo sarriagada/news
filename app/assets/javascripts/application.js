@@ -16,6 +16,7 @@
 //= require bootstrap
 //= require redactor-rails/redactor.min
 //= require redactor-rails/config.js
+//= require redactor-rails/langs/es.js
 //= require dataTables/jquery.dataTables
 //= require dataTables/jquery.dataTables.bootstrap
 //= require notes
