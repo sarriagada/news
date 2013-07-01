@@ -24,6 +24,7 @@ html
                 li
                   = link_to 'Salir', destroy_user_session_path, method: :delete 
       header.row-fluid
+      = link_to root_path, class: 'brand' do
         h1 Noticias del dia
       .row-fluid
         = yield
