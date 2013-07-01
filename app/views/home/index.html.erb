@@ -6,10 +6,20 @@
 				<%= link_to 'Editar', edit_note_path(note) %>
 			<% end %>
 			<p>
-				<i><%= note.created_at %></i> <%= " - #{note.autor}" if note.autor %>
+				<i><%= note.created_at.to_formatted_s(:short) %></i> <%= " - #{note.autor}" if note.autor %>
 			</p>
+
 			<h3><%= link_to note.title, note %></h3>
 			<p><%= note.summary.html_safe %></p>
+
+			<!-- social likes -->
+			<ul class="social-likes">
+			    <li class="facebook" data-url="<%= note_url(note) %>" title="Share link on Facebook">Facebook</li>
+			    <li class="twitter" title="Share link on Twitter">Twitter</li>
+			    <li class="plusone" title="Share link on Google+">Google+</li>
+			</ul>
+			<!--  end social likes -->
+
 			<%= link_to 'Leer mas...', note %>
 		<% end %>
 	<% end %>
@@ -23,10 +33,19 @@
 				<%= link_to 'Editar', edit_note_path(note) %>
 			<% end %>
 			<p>
-				<i><%= note.created_at %></i> <%= " - #{note.autor}" if note.autor %>
+				<i><%= note.created_at.to_formatted_s(:short) %></i> <%= " - #{note.autor}" if note.autor %>
 			</p>
 			<h3><%= link_to note.title, note %></h3>
 			<p><%= note.summary.html_safe %></p>
+
+			<!-- social likes -->
+			<ul class="social-likes">
+			    <li class="facebook" data-url="<%= note_url(note) %>" title="Share link on Facebook">Facebook</li>
+			    <li class="twitter" title="Share link on Twitter">Twitter</li>
+			    <li class="plusone" title="Share link on Google+">Google+</li>
+			</ul>
+			<!--  end social likes -->
+
 			<%= link_to 'Leer mas...', note %>
 		<% end %>
 	<% end %>
@@ -40,10 +59,19 @@
 				<%= link_to 'Editar', edit_note_path(note) %>
 			<% end %>
 			<p>
-				<i><%= note.created_at %></i> <%= " - #{note.autor}" if note.autor %>
+				<i><%= note.created_at.to_formatted_s(:short) %></i> <%= " - #{note.autor}" if note.autor %>
 			</p>
 			<h3><%= link_to note.title, note %></h3>
 			<p><%= note.summary.html_safe %></p>
+
+			<!-- social likes -->
+			<ul class="social-likes">
+			    <li class="facebook" data-url="<%= note_url(note) %>" title="Share link on Facebook">Facebook</li>
+			    <li class="twitter" title="Share link on Twitter">Twitter</li>
+			    <li class="plusone" title="Share link on Google+">Google+</li>
+			</ul>
+			<!--  end social likes -->
+
 			<%= link_to 'Leer mas...', note %>
 		<% end %>
 	<% end %>
