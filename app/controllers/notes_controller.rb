@@ -1,4 +1,5 @@
 class NotesController < ApplicationController
+
   # GET /notes
   # GET /notes.json
   def index
@@ -41,7 +42,7 @@ class NotesController < ApplicationController
   # POST /notes.json
   def create
     @note = Note.new(params[:note])
-
+    @note.position = 1
     respond_to do |format|
       if @note.save
         format.html { redirect_to @note, notice: 'Note was successfully created.' }
