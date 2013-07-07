@@ -13,6 +13,10 @@
 </h1>
 
 <p>
+  <%= @note.category.name if @note.category %>
+</p>
+
+<p>
   <%= @note.summary.html_safe %>
 </p>
 

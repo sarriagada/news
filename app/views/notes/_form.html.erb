@@ -20,6 +20,7 @@
   <div class="field">
     <%= f.input :body, input_html: { class: 'redactor' } %>
   </div>
+  <%= f.select :category_id, Category.all.collect {|c| [ c.name, c.id ] } %>
   <div class="field">
     <%= f.input :section, collection: [["col izquierda", "1"], ["col central", "2"], ["col derecha", "3"]], as: :select, include_blank: false, wrapper_html: { class: 'inline' } %>
   </div>

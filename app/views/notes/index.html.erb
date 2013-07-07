@@ -3,6 +3,7 @@
     <tr>
       <th>Columna</th>
       <th>Posicion</th>
+      <th>Categoria</th>
       <th>Titulo</th>
       <th>Sumario</th>
       <th>Acciones</th>
@@ -24,6 +25,7 @@
           <%= section %>
         </td>
         <td><%= note.position %></td>
+        <td><%= note.category.name if note.category %></td>
         <td><%= note.title %></td>
         <td><%= note.summary.html_safe %></td>
         <td><%= link_to 'Show', note %>|<%= link_to 'Edit', edit_note_path(note) %>|<%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></td>

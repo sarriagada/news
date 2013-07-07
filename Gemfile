@@ -11,6 +11,7 @@ gem 'redactor-rails'
 gem 'jquery-ui-rails'
 gem 'acts_as_list'
 gem 'jquery-datatables-rails'
+gem "nested_form"
 
 group :assets do
   gem 'sass-rails',      '~> 3.2.3'
@@ -20,8 +21,9 @@ group :assets do
 end
 
 group :development do
-	gem 'sqlite3'
+  gem 'sqlite3'
   gem "better_errors"
+  gem "binding_of_caller"
 end
 
 group :production do

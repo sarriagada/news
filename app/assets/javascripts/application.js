@@ -19,4 +19,5 @@
 //= require dataTables/jquery.dataTables
 //= require dataTables/jquery.dataTables.bootstrap
 //= require social-likes.min
+//= require jquery_nested_form
 //= require notes

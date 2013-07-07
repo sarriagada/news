@@ -1,45 +1,37 @@
 class NotesController < ApplicationController
 
-  # GET /notes
-  # GET /notes.json
   def index
     @notes = Note.order("position")
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html
       format.json { render json: @notes }
     end
   end
 
-  # GET /notes/1
-  # GET /notes/1.json
   def show
     @note = Note.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html
       format.json { render json: @note }
     end
   end
 
-  # GET /notes/new
-  # GET /notes/new.json
   def new
     @note = Note.new
-
+    @categories = Category.all
     respond_to do |format|
-      format.html # new.html.erb
+      format.html
       format.json { render json: @note }
     end
   end
 
-  # GET /notes/1/edit
   def edit
     @note = Note.find(params[:id])
+    @categories = Category.all
   end
 
-  # POST /notes
-  # POST /notes.json
   def create
     @note = Note.new(params[:note])
     @note.position = 1
@@ -54,8 +46,6 @@ class NotesController < ApplicationController
     end
   end
 
-  # PUT /notes/1
-  # PUT /notes/1.json
   def update
     @note = Note.find(params[:id])
 
@@ -70,8 +60,6 @@ class NotesController < ApplicationController
     end
   end
 
-  # DELETE /notes/1
-  # DELETE /notes/1.json
   def destroy
     @note = Note.find(params[:id])
     @note.destroy
