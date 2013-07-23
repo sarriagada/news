@@ -1,0 +1,15 @@
+.navbar.navbar-inverse.navbar-fixed-top
+  .navbar-inner
+    .container-fluid
+      = link_to 'Titulo', root_path, class: 'brand'
+      ul.nav
+        li
+          = link_to 'Crear Nota', new_note_path
+        li
+          = link_to 'Listado de Notas', notes_path
+        li
+          = link_to 'Crear categoria', new_category_path
+        li
+          = link_to current_user.email, root_path
+        li
+          = link_to 'Salir', destroy_user_session_path, method: :delete

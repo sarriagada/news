@@ -20,4 +20,5 @@
 //= require dataTables/jquery.dataTables.bootstrap
 //= require social-likes.min
 //= require jquery_nested_form
+//= require lightbox
 //= require notes

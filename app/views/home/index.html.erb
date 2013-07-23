@@ -1,81 +1,85 @@
-<ul id="section-1" data-section="1" data-update-url="<%= sort_notes_url %>" class="span4 lista-izq connectedSortable">
-	<% @notes_section_1.each do |note| %>
-		<%= content_tag_for :li, note do %>
-		 	<% if user_signed_in? %>
-				<span class="handle">[ drag ]</span>
-				<%= link_to 'Editar', edit_note_path(note) %>
+<div class="row-fluid">
+	<ul id="section-1" data-section="1" data-update-url="<%= sort_notes_url %>" class="span12 lista-izq connectedSortable">
+		<% @notes_section_1.each do |note| %>
+			<%= content_tag_for :li, note do %>
+			 	<% if user_signed_in? %>
+					<span class="handle">[ drag ]</span>
+					<%= link_to 'Editar', edit_note_path(note) %>
+				<% end %>
+				<p>
+					<i><%= note.created_at.to_formatted_s(:short) %></i> <%= " - #{note.autor}" if note.autor %>
+					<%= link_to note.category.name, note.category if note.category %>
+				</p>
+
+				<h3><%= link_to note.title, note %></h3>
+				<p><%= note.summary.html_safe %></p>
+
+				<!-- social likes -->
+				<ul class="social-likes">
+				    <li class="facebook" data-url="<%= note_url(note) %>" title="Share link on Facebook">Facebook</li>
+				    <li class="twitter" title="Share link on Twitter">Twitter</li>
+				    <li class="plusone" title="Share link on Google+">Google+</li>
+				</ul>
+				<!--  end social likes -->
+
+				<%= link_to 'Leer mas...', note %>
 			<% end %>
-			<p>
-				<i><%= note.created_at.to_formatted_s(:short) %></i> <%= " - #{note.autor}" if note.autor %>
-				<%= link_to note.category.name, note.category if note.category %>
-			</p>
-
-			<h3><%= link_to note.title, note %></h3>
-			<p><%= note.summary.html_safe %></p>
-
-			<!-- social likes -->
-			<ul class="social-likes">
-			    <li class="facebook" data-url="<%= note_url(note) %>" title="Share link on Facebook">Facebook</li>
-			    <li class="twitter" title="Share link on Twitter">Twitter</li>
-			    <li class="plusone" title="Share link on Google+">Google+</li>
-			</ul>
-			<!--  end social likes -->
-
-			<%= link_to 'Leer mas...', note %>
 		<% end %>
-	<% end %>
-</ul>
+	</ul>
+</div>
 
-<ul id="section-2" data-section="2" data-update-url="<%= sort_notes_url %>" class="span4 lista-centro connectedSortable">
-	<% @notes_section_2.each do |note| %>
-		<%= content_tag_for :li, note do %>
-		 	<% if user_signed_in? %>
-				<span class="handle">[ drag ]</span>
-				<%= link_to 'Editar', edit_note_path(note) %>
+<div class="row-fluid">
+	<ul id="section-2" data-section="2" data-update-url="<%= sort_notes_url %>" class="span6 lista-centro connectedSortable">
+		<% @notes_section_2.each do |note| %>
+			<%= content_tag_for :li, note do %>
+			 	<% if user_signed_in? %>
+					<span class="handle">[ drag ]</span>
+					<%= link_to 'Editar', edit_note_path(note) %>
+				<% end %>
+				<p>
+					<i><%= note.created_at.to_formatted_s(:short) %></i> <%= " - #{note.autor}" if note.autor %>
+					<%= link_to note.category.name, note.category if note.category %>
+				</p>
+				<h3><%= link_to note.title, note %></h3>
+				<p><%= note.summary.html_safe %></p>
+
+				<!-- social likes -->
+				<ul class="social-likes">
+				    <li class="facebook" data-url="<%= note_url(note) %>" title="Share link on Facebook">Facebook</li>
+				    <li class="twitter" title="Share link on Twitter">Twitter</li>
+				    <li class="plusone" title="Share link on Google+">Google+</li>
+				</ul>
+				<!--  end social likes -->
+
+				<%= link_to 'Leer mas...', note %>
 			<% end %>
-			<p>
-				<i><%= note.created_at.to_formatted_s(:short) %></i> <%= " - #{note.autor}" if note.autor %>
-				<%= link_to note.category.name, note.category if note.category %>
-			</p>
-			<h3><%= link_to note.title, note %></h3>
-			<p><%= note.summary.html_safe %></p>
-
-			<!-- social likes -->
-			<ul class="social-likes">
-			    <li class="facebook" data-url="<%= note_url(note) %>" title="Share link on Facebook">Facebook</li>
-			    <li class="twitter" title="Share link on Twitter">Twitter</li>
-			    <li class="plusone" title="Share link on Google+">Google+</li>
-			</ul>
-			<!--  end social likes -->
-
-			<%= link_to 'Leer mas...', note %>
 		<% end %>
-	<% end %>
-</ul>
+	</ul>
 
-<ul id="section-3" data-section="3" data-update-url="<%= sort_notes_url %>" class="span4 lista-der connectedSortable">
-	<% @notes_section_3.each do |note| %>
-		<%= content_tag_for :li, note do %>
-		 	<% if user_signed_in? %>
-				<span class="handle">[ drag ]</span>
-				<%= link_to 'Editar', edit_note_path(note) %>
+	<ul id="section-3" data-section="3" data-update-url="<%= sort_notes_url %>" class="span6 lista-der connectedSortable">
+		<% @notes_section_3.each do |note| %>
+			<%= content_tag_for :li, note do %>
+			 	<% if user_signed_in? %>
+					<span class="handle">[ drag ]</span>
+					<%= link_to 'Editar', edit_note_path(note) %>
+				<% end %>
+				<p>
+					<i><%= note.created_at.to_formatted_s(:short) %></i> <%= " - #{note.autor}" if note.autor %>
+					<%= link_to note.category.name, note.category if note.category %>
+				</p>
+				<h3><%= link_to note.title, note %></h3>
+				<p><%= note.summary.html_safe %></p>
+
+				<!-- social likes -->
+				<ul class="social-likes">
+				    <li class="facebook" data-url="<%= note_url(note) %>" title="Share link on Facebook">Facebook</li>
+				    <li class="twitter" title="Share link on Twitter">Twitter</li>
+				    <li class="plusone" title="Share link on Google+">Google+</li>
+				</ul>
+				<!--  end social likes -->
+
+				<%= link_to 'Leer mas...', note %>
 			<% end %>
-			<p>
-				<i><%= note.created_at.to_formatted_s(:short) %></i> <%= " - #{note.autor}" if note.autor %>
-				<%= link_to note.category.name, note.category if note.category %>
-			</p>
-			<h3><%= link_to note.title, note %></h3>
-			<p><%= note.summary.html_safe %></p>
-
-			<!-- social likes -->
-			<ul class="social-likes">
-			    <li class="facebook" data-url="<%= note_url(note) %>" title="Share link on Facebook">Facebook</li>
-			    <li class="twitter" title="Share link on Twitter">Twitter</li>
-			    <li class="plusone" title="Share link on Google+">Google+</li>
-			</ul>
-			<!--  end social likes -->
-
-			<%= link_to 'Leer mas...', note %>
 		<% end %>
-	<% end %>
-</ul>
+	</ul>
+</div>
